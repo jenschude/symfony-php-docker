@@ -1,0 +1,19 @@
+application:
+    build: sunrise-php
+    tty: true
+    ports:
+        - 9000:9000
+    environment:
+      SPHERE_CLIENT_ID: <sphere_client_id>
+      SPHERE_CLIENT_SECRET: <sphere_client_secret>
+      SPHERE_PROJECT: <sphere_project>
+nginx:
+    build: nginx
+    ports:
+        - 80:80
+    links:
+        - application
+    volumes_from:
+        - application
+    volumes:
+        - ./logs/nginx/:/var/log/nginx
