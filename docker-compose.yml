@@ -1,5 +1,5 @@
 application:
-    build: sunrise-php
+    build: php-fpm
     tty: true
     ports:
         - 9000:9000
