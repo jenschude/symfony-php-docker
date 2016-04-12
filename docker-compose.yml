@@ -1,14 +1,12 @@
 application:
-    build: php-fpm
+    image: jaysde/php-fpm
     tty: true
     ports:
         - 9000:9000
-    environment:
-      SPHERE_CLIENT_ID: <sphere_client_id>
-      SPHERE_CLIENT_SECRET: <sphere_client_secret>
-      SPHERE_PROJECT: <sphere_project>
+    volumes:
+      - .:/var/www
 nginx:
-    build: nginx
+    image: jaysde/nginx
     ports:
         - 80:80
     links:
