@@ -10,6 +10,7 @@ RUN apt-get update \
     && docker-php-ext-install zip \
     && curl -sS https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer \
+    && composer global require hirak/prestissimo \
     && apt-get clean
 
 RUN usermod -u 1000 www-data
