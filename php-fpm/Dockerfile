@@ -16,6 +16,8 @@ RUN usermod -u 1000 www-data
 
 ADD 60-user.ini /usr/local/etc/php/conf.d/
 
+WORKDIR /var/www/symfony/web
+
 EXPOSE 9000
 
 CMD ["php-fpm", "-F"]
