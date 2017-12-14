@@ -1,10 +1,10 @@
-FROM php:5.6-fpm
+FROM php:7.1-fpm
 
 RUN apt-get update \
     && apt-get install -y apt-utils \
     && apt-get install -y git curl libicu-dev zlib1g-dev \
     && docker-php-ext-install intl \
-    && pecl install apcu-4.0.10 \
+    && pecl install apcu \
     && docker-php-ext-enable apcu \
     && docker-php-ext-install mbstring \
     && docker-php-ext-install zip \
